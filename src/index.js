@@ -12,6 +12,7 @@ import Dashboard from "./pages/Dashboard";
 import "./style/index.scss";
 import Welcome from "./pages/Welcome/index";
 import ForgotPwd from "./pages/Pwd-Fgt";
+import Footer from "./components/Footer";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -29,6 +30,7 @@ root.render(
             <Route path="/dashboard" element={<Dashboard />} />
           </Route>
         </Routes>
+        <Footer />
       </Router>
     </CookiesProvider>
   </React.StrictMode>

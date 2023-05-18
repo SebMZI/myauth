@@ -9,7 +9,7 @@ const SignUpForm = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const [isError, setIsError] = useState(false);
   const handleSubmit = useCallback(
     async (e) => {
       e.preventDefault();
@@ -17,6 +17,7 @@ const SignUpForm = () => {
       createUserWithEmailAndPassword(auth, email, password)
         .then(() => {
           // Signed in
+          setIsError(false);
           navigate("/login");
           // ...
         })
@@ -24,6 +25,7 @@ const SignUpForm = () => {
           const errorCode = error.code;
           const errorMessage = error.message;
           console.log(errorCode, errorMessage);
+          setIsError(true);
         });
     },
     [email, password, navigate]
@@ -48,6 +50,9 @@ const SignUpForm = () => {
           setPassword(e.target.value);
         }}
       />
+      <div className="error-container">
+        {isError ? <p className="errorText">Email invalide.</p> : null}
+      </div>
       <button className="signup-btn" type="submit">
         Créer un compte
       </button>

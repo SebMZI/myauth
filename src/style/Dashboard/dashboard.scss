@@ -1,0 +1,110 @@
+.dashboard {
+  max-width: 1240px;
+  margin: auto;
+}
+.dashboard-title {
+  max-width: 1240px;
+  margin: 70px auto 50px;
+  font-size: 45px;
+  text-align: left;
+}
+
+.dashboard-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 50px;
+  .dashboard-modif {
+    width: 50%;
+    .changeName {
+      display: flex;
+      flex-direction: column;
+      width: auto;
+      padding-bottom: 50px;
+      margin: 0px 25px 40px;
+      box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+      .dash-label {
+        margin: 0;
+        margin-bottom: 5px;
+      }
+      .dash-input {
+        margin: 0;
+        margin-bottom: 20px;
+      }
+      .dash-NameMsg {
+        height: 16px;
+        p {
+          color: rgb(65, 65, 255);
+          text-align: center;
+        }
+      }
+      .dash-btn {
+        margin-top: 20px;
+        border: none;
+        color: white;
+        padding: 10px 15px;
+        background: rgb(65, 65, 255);
+        font-size: 16px;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: opacity 0.4s;
+        transition: box-shadow 0.4s;
+      }
+    }
+    .changePwd {
+      display: flex;
+      flex-direction: column;
+      width: auto;
+      padding-bottom: 50px;
+      margin: 0px 25px 40px;
+      box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+      .dash-label {
+        margin: 0;
+        margin-bottom: 5px;
+      }
+      .dash-input {
+        margin: 0 0 20px;
+      }
+      .dash-msg {
+        height: 16px;
+        p {
+          color: rgb(65, 65, 255);
+          text-align: center;
+        }
+      }
+      .dash-btn {
+        margin-top: 20px;
+        border: none;
+        color: white;
+        padding: 10px 15px;
+        background: rgb(65, 65, 255);
+        font-size: 16px;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: opacity 0.4s;
+        transition: box-shadow 0.4s;
+      }
+    }
+  }
+  .delete-content {
+    p {
+      color: red;
+      margin-bottom: 20px;
+    }
+    .delete-btn {
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: background-color 0.4s ease-in-out;
+      &:hover {
+        border: 2px solid red;
+        background-color: #ffffff;
+        color: red;
+        padding: 8px 18px;
+      }
+    }
+  }
+}

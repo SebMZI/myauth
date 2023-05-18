@@ -30,7 +30,7 @@ const Header = () => {
                 <Link to={"/home"}>Accueil</Link>
               </li>
               <li>
-                <Link to={"/dashboard"}>Dashboard</Link>
+                <Link to={"/dashboard"}>Mon Compte</Link>
               </li>
               <button className="cta-btn" onClick={handleLogout}>
                 Se déconnecter

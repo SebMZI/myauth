@@ -1,5 +1,10 @@
 import React from "react";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  setPersistence,
+  browserSessionPersistence,
+} from "firebase/auth";
 import { useCallback } from "react";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
@@ -36,6 +41,7 @@ const LoginForm = () => {
         });
     },
     [email, password, navigate, setCookie]
+    // , navigate, setCookie
   );
 
   return (

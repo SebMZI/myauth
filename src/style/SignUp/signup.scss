@@ -1,0 +1,57 @@
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 450px;
+  width: auto;
+  height: 450px;
+  margin: 150px auto;
+  padding: 15px 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 25px;
+  h2 {
+    text-align: center;
+    margin: 20px 0px 40px 0px;
+    font-size: 30px;
+  }
+  label {
+    margin: 10px 25px;
+  }
+  input {
+    margin: 0px 25px 25px;
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: 18px;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .signup-btn {
+    margin: 20px 25px 0px 25px;
+    font-family: "Montserrat", sans-serif;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    background: rgb(65, 65, 255);
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: opacity 0.4s;
+    transition: box-shadow 0.4s;
+    &:hover {
+      opacity: 0.9;
+      box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px,
+        rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px,
+        rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px,
+        rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    }
+  }
+  .no-acc {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 14px;
+    a {
+      color: rgb(65, 65, 255);
+    }
+  }
+}

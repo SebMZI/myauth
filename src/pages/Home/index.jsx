@@ -1,15 +1,37 @@
-import { useCookies } from "react-cookie";
-import { getAuth } from "firebase/auth";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import React, { useState, useEffect } from "react";
+import HomeAbout from "../../components/about";
 
 function App() {
   const auth = getAuth();
-  const user = auth.currentUser;
-  const [cookies, setCookie] = useCookies([]);
+  const [user, setUser] = useState(null);
 
-  console.log(user);
-  console.log("Ceci est le token utilisateur : " + cookies.userToken);
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser(user);
+      } else {
+        setUser(null);
+      }
+    });
 
-  return <div>Home - Private Page</div>;
+    return () => unsubscribe();
+  }, [auth]);
+
+  if (user) {
+    return (
+      <div>
+        <div className="home-main">
+          <h2 className="home-title">
+            Bonjour{" "}
+            {user.displayName ? user.displayName : "nouvel Utilisateur !"}
+          </h2>
+          <p className="home-subtitle">Comment allez-vous ? </p>
+        </div>
+        <HomeAbout />
+      </div>
+    );
+  }
 }
 
 export default App;

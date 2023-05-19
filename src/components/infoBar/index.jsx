@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import noUser from "../../assets/no-user.png";
 import { sendEmailVerification } from "firebase/auth";
 
 const InfoBar = ({ user, name, email, id, emailVerified }) => {
+  const [msgSend, setMsgSeng] = useState("Vérifier Email");
   const handleVerify = (e) => {
     e.preventDefault();
     sendEmailVerification(user);
+    setMsgSeng("Email envoyé");
   };
 
   return (
@@ -18,7 +20,9 @@ const InfoBar = ({ user, name, email, id, emailVerified }) => {
           {emailVerified === false ? (
             <div className="verif-email">
               <p className="emailVerif-txt">Email non vérifié !</p>
-              <button onClick={handleVerify}>Vérifier Email</button>
+              <button onClick={handleVerify} className="verify-btn">
+                {msgSend}
+              </button>
             </div>
           ) : (
             <p className="emailVerif-txt">Email Vérifié</p>

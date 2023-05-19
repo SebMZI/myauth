@@ -1,6 +1,7 @@
 .dashboard {
   max-width: 1240px;
   margin: auto;
+  height: 100%;
 }
 .dashboard-title {
   max-width: 1240px;
@@ -51,6 +52,42 @@
         transition: box-shadow 0.4s;
       }
     }
+
+    .changeEmail {
+      display: flex;
+      flex-direction: column;
+      width: auto;
+      padding-bottom: 50px;
+      margin: 0px 25px 40px;
+      box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+      .dash-label {
+        margin: 0;
+        margin-bottom: 5px;
+      }
+      .dash-input {
+        margin: 0;
+        margin-bottom: 20px;
+      }
+      .dash-msg {
+        height: 16px;
+        p {
+          color: rgb(65, 65, 255);
+          text-align: center;
+        }
+      }
+      .dash-btn {
+        margin-top: 20px;
+        border: none;
+        color: white;
+        padding: 10px 15px;
+        background: rgb(65, 65, 255);
+        font-size: 16px;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: opacity 0.4s;
+        transition: box-shadow 0.4s;
+      }
+    }
     .changePwd {
       display: flex;
       flex-direction: column;
@@ -71,6 +108,33 @@
           color: rgb(65, 65, 255);
           text-align: center;
         }
+      }
+      .dash-btn {
+        margin-top: 20px;
+        border: none;
+        color: white;
+        padding: 10px 15px;
+        background: rgb(65, 65, 255);
+        font-size: 16px;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: opacity 0.4s;
+        transition: box-shadow 0.4s;
+      }
+    }
+    .changeImg {
+      display: flex;
+      flex-direction: column;
+      width: auto;
+      padding-bottom: 50px;
+      margin: 0px 25px 40px;
+      box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+      .dash-label {
+        margin: 0;
+        margin-bottom: 20px;
+      }
+      .dash-input {
+        margin: 0 0 20px;
       }
       .dash-btn {
         margin-top: 20px;

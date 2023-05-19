@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { getApp } from "firebase/app";
-import { updateProfile, updatePassword, getAuth } from "firebase/auth";
+import {
+  updateProfile,
+  updatePassword,
+  getAuth,
+  updateEmail,
+} from "firebase/auth";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 const ModifDashboard = ({ user, emailVerified, name, photo }) => {
@@ -9,6 +14,8 @@ const ModifDashboard = ({ user, emailVerified, name, photo }) => {
   const [pwdMsg, setPwdMsg] = useState("");
   const [nameMsg, setNameMsg] = useState("");
   const [userName, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [emailMsg, setEmailMsg] = useState("");
   const [img, setImg] = useState(null);
   const auth = getAuth();
 
@@ -20,6 +27,28 @@ const ModifDashboard = ({ user, emailVerified, name, photo }) => {
         .then(() => setNameMsg("Nom et Prénom modifiés"))
         .catch((err) => {
           console.log(err);
+        });
+    }
+  };
+
+  const handleChangeEmail = (e) => {
+    if (!email) {
+      e.preventDefault();
+      setEmailMsg("Entrer un email !");
+    } else {
+      e.preventDefault();
+      updateEmail(auth.currentUser, email)
+        .then(() => setEmailMsg("Email modifié !"))
+        .catch((err) => {
+          console.log(err.code);
+          err.code === "auth/requires-recent-login" &&
+            setEmailMsg(
+              "Veuillez vous reconnecter pour changer de mot de passe !"
+            );
+          err.code === "auth/email-already-in-use" &&
+            setEmailMsg(
+              "Cet email est déjà utilisé. Veuillez en choisir un autre."
+            );
         });
     }
   };
@@ -87,6 +116,7 @@ const ModifDashboard = ({ user, emailVerified, name, photo }) => {
       timer = setTimeout(() => {
         setPwdMsg("");
         setNameMsg("");
+        setEmailMsg("");
       }, 3000);
     }
 
@@ -111,6 +141,22 @@ const ModifDashboard = ({ user, emailVerified, name, photo }) => {
 
         <button className="dash-btn" type="submit">
           {!name ? "Ajouter" : "Modifier"}
+        </button>
+      </form>
+      <form onSubmit={handleChangeEmail} className="changeEmail">
+        <label htmlFor="email" className="dash-label">
+          Modifier Email
+        </label>
+        <input
+          type="email"
+          className="dash-input"
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <div className="dash-msg">
+          <p>{emailMsg}</p>
+        </div>
+        <button type="submit" className="dash-btn">
+          Modifier Email
         </button>
       </form>
       <form onSubmit={handleChangePwd} className="changePwd">
@@ -141,15 +187,20 @@ const ModifDashboard = ({ user, emailVerified, name, photo }) => {
         </button>
       </form>
       <form className="changeImg" onSubmit={handleImg}>
-        <label htmlFor="img">Ajouter Lien IMG</label>
+        <label htmlFor="img" className="dash-label">
+          Ajouter une Image
+        </label>
         <input
+          className="dash-input"
           type="file"
-          accept="image/*"
+          accept=".png,.jpg,.jpeg,.gif"
           id="img"
           placeholder="https://www.grgergerg.com/fezfzefzefe"
           onChange={(e) => setImg(e.target.files[0])}
         />
-        <button type="submit">Modifier</button>
+        <button type="submit" className="dash-btn">
+          Modifier
+        </button>
       </form>
     </div>
   );

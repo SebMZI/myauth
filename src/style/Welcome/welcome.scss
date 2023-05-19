@@ -1,0 +1,123 @@
+.welcome {
+  .welcome-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px auto 0px auto;
+    max-width: 1240px;
+    width: auto;
+    height: 700px;
+    .welcome-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+
+      .welcome-title {
+        margin: 0;
+        margin-bottom: 50px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 60px;
+        span {
+          color: rgb(65, 65, 255);
+        }
+      }
+      .welcome-cta {
+        margin-top: 15px;
+        margin-right: 30px;
+        border: none;
+        color: white;
+        padding: 10px 30px;
+        background: rgb(65, 65, 255);
+        font-size: 16px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 22px;
+        transition: color 0.4s ease-in-out;
+        transition: background-color 0.4s ease-in-out;
+        &:hover {
+          color: rgb(65, 65, 255);
+          background-color: #ffffff;
+          padding: 8px 28px;
+          border: 2px solid rgb(65, 65, 255);
+          font-weight: 600;
+        }
+      }
+      .welcome-cta-log {
+        margin-top: 15px;
+        color: rgb(65, 65, 255);
+        padding: 12px 32px;
+        border: 2px solid rgb(65, 65, 255);
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 25px;
+        transition: color 0.4s ease-in-out;
+        transition: background-color 0.4s ease-in-out;
+        &:hover {
+          color: #ffffff;
+          background-color: rgb(65, 65, 255);
+          padding: 12px 32px;
+          font-weight: 600;
+        }
+      }
+    }
+    .welcome-lock {
+      margin-right: 50px;
+      transition: transform 0.9s ease-in-out;
+
+      &:hover {
+        transform: rotateZ(360deg);
+      }
+    }
+  }
+
+  .contact-container {
+    height: 600px;
+    max-width: 1240px;
+    width: auto;
+    margin: 100px auto 300px auto;
+    .contact-title {
+      color: rgb(65, 65, 255);
+      text-align: center;
+      font-size: 40px;
+    }
+    .welcome-contact-form {
+      display: flex;
+      flex-direction: column;
+      padding-top: 50px;
+      label {
+        margin: 0px 150px 20px 150px;
+      }
+      input {
+        margin: 0 150px 35px 150px;
+      }
+      textarea {
+        margin: 0 150px 0 150px;
+        border: none;
+        border-bottom: 1px solid black;
+        font-size: 18px;
+        max-width: 1240px;
+        min-height: 150px;
+        max-height: 150px;
+        overflow-y: scroll;
+        &:focus {
+          outline: none;
+        }
+      }
+      .contact-btn {
+        margin: 70px auto 70px auto;
+        width: 50%;
+        text-align: center;
+        border: none;
+        color: white;
+        padding: 10px 0px;
+        background: rgb(65, 65, 255);
+        font-size: 16px;
+        border-radius: 25px;
+        cursor: pointer;
+      }
+    }
+  }
+}

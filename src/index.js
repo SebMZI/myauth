@@ -23,12 +23,12 @@ root.render(
         <Header />
         <Routes>
           <Route path="/" element={<Welcome />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/mot-de-passe-oublie" element={<ForgotPwd />} />
-          <Route path="/signup" element={<SignUp />} />
+          <Route path="login" element={<Login />} />
+          <Route path="mot-de-passe-oublie" element={<ForgotPwd />} />
+          <Route path="signup" element={<SignUp />} />
           <Route element={<PrivateRoutes />}>
-            <Route path="/home" element={<App />} exact />
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="home" element={<App />} exact />
+            <Route path="dashboard" element={<Dashboard />} />
           </Route>
         </Routes>
         <Footer />

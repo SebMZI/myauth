@@ -24,7 +24,7 @@ const LoginForm = () => {
           setCookie("userToken", user.accessToken);
           setIsError(false);
           console.log("userToken :" + user.accessToken);
-          navigate("/home");
+          navigate("home");
           window.location.reload(false);
         })
         .catch((error) => {

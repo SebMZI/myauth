@@ -17,7 +17,7 @@ const FormPwd = () => {
         .then(() => {
           console.log("email envoyé");
           setError(false);
-          navigate("/login");
+          navigate("login");
         })
         .catch((error) => {
           const errorCode = error.code;

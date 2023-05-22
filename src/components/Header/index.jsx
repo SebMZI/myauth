@@ -11,7 +11,7 @@ const Header = () => {
     signOut(auth)
       .then(() => {
         removeCookie("userToken");
-        <Navigate to={"/"} />;
+        <Navigate to={"welcome"} />;
         window.location.reload(false);
       })
       .catch((err) => {
@@ -26,10 +26,10 @@ const Header = () => {
         {cookies.userToken ? (
           <ul>
             <li>
-              <Link to={"/home"}>Accueil</Link>
+              <Link to={"home"}>Accueil</Link>
             </li>
             <li>
-              <Link to={"/dashboard"}>Mon Compte</Link>
+              <Link to={"dashboard"}>Mon Compte</Link>
             </li>
             <button className="cta-btn" onClick={handleLogout}>
               Se déconnecter
@@ -41,10 +41,10 @@ const Header = () => {
               <Link to={"/"}>Accueil</Link>
             </li>
             <li>
-              <Link to={"/login"}>Se connecter</Link>
+              <Link to={"login"}>Se connecter</Link>
             </li>
             <li className="cta-btn">
-              <Link to={"/signup"}>Créer un compte</Link>
+              <Link to={"signup"}>Créer un compte</Link>
             </li>
           </ul>
         )}

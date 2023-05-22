@@ -13,13 +13,13 @@ const DeleteDashboard = () => {
       if (window.confirm("Voulez-vous supprimer ce compte ?") === true) {
         deleteUser(user)
           .then(() => {
-            navigate("/login");
+            navigate("login");
             window.location.reload(false);
           })
           .catch((error) => {
             if (error.code === "auth/requires-recent-login") {
               removeCookie("userToken");
-              navigate("/login");
+              navigate("login");
             } else {
               console.log(error);
             }

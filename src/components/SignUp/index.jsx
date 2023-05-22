@@ -18,7 +18,7 @@ const SignUpForm = () => {
         .then(() => {
           // Signed in
           setIsError(false);
-          navigate("/login");
+          navigate("login");
           // ...
         })
         .catch((error) => {
@@ -57,7 +57,7 @@ const SignUpForm = () => {
         Créer un compte
       </button>
       <p className="no-acc">
-        Déjà un compte ? <Link to={"/login"}>Connectez-vous !</Link>
+        Déjà un compte ? <Link to={"login"}>Connectez-vous !</Link>
       </p>
     </form>
   );

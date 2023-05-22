@@ -3,7 +3,7 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useCallback } from "react";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import app from "../../firebaseSettings/base/base";
+//import app from "../../firebaseSettings/base/base";
 
 const SignUpForm = () => {
   const navigate = useNavigate();
@@ -11,8 +11,8 @@ const SignUpForm = () => {
   const [password, setPassword] = useState("");
   const [isError, setIsError] = useState(false);
   const handleSubmit = useCallback(
-    async (e) => {
-      e.preventDefault();
+    async (event) => {
+      event.preventDefault();
       const auth = getAuth();
       createUserWithEmailAndPassword(auth, email, password)
         .then(() => {
@@ -38,16 +38,16 @@ const SignUpForm = () => {
       <input
         id="email"
         type="email"
-        onChange={(e) => {
-          setEmail(e.target.value);
+        onChange={(event) => {
+          setEmail(event.target.value);
         }}
       />
       <label htmlFor="password">Mot de passe</label>
       <input
         id="password"
         type="password"
-        onChange={(e) => {
-          setPassword(e.target.value);
+        onChange={(event) => {
+          setPassword(event.target.value);
         }}
       />
       <div className="error-container">

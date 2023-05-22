@@ -13,6 +13,7 @@ import "./style/index.scss";
 import Welcome from "./pages/Welcome/index";
 import ForgotPwd from "./pages/Pwd-Fgt";
 import Footer from "./components/Footer";
+import app from "./firebaseSettings/base/base";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

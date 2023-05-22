@@ -7,9 +7,9 @@ const FormPwd = () => {
   const navigate = useNavigate();
   const [isError, setError] = useState(false);
   const [email, setEmail] = useState();
-  const handleFgtPwd = (e) => {
-    e.preventDefault();
+  const handleFgtPwd = (event) => {
     if (!email) {
+      event.preventDefault();
       console.log("Entrer un email valide");
       setError(true);
     } else {
@@ -32,7 +32,7 @@ const FormPwd = () => {
     <form onSubmit={handleFgtPwd} className="forget-form">
       <h2>Réinitialiser</h2>
       <label htmlFor="email">Email</label>
-      <input type="email" onChange={(e) => setEmail(e.target.value)} />
+      <input type="email" onChange={(event) => setEmail(event.target.value)} />
       <div className="error-container">
         {isError ? (
           <p className="errorText">Veuillez entrer un email valide.</p>

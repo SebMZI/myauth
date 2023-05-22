@@ -4,8 +4,7 @@ import { sendEmailVerification } from "firebase/auth";
 
 const InfoBar = ({ user, name, email, id, emailVerified }) => {
   const [msgSend, setMsgSeng] = useState("Vérifier Email");
-  const handleVerify = (e) => {
-    e.preventDefault();
+  const handleVerify = () => {
     sendEmailVerification(user);
     setMsgSeng("Email envoyé");
   };

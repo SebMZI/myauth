@@ -46,3 +46,44 @@ header {
     }
   }
 }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  header {
+    max-width: 1024px;
+    margin: auto 50px;
+    h1 {
+      font-size: 30px;
+    }
+    nav {
+      ul {
+        a {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  header {
+    padding-top: 25px;
+    flex-direction: column;
+    height: 120px;
+    margin-bottom: 50px;
+    h1 {
+      font-size: 24px;
+    }
+    nav {
+      ul {
+        flex-wrap: wrap;
+        a {
+          font-size: 12px;
+        }
+        .cta-btn {
+          padding: 10px 15px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}

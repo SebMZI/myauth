@@ -45,5 +45,36 @@
     width: 76px;
     height: 76px;
     border-radius: 50px;
+    object-fit: cover;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .infoBar {
+    .infoBar-content {
+      padding-left: 50px;
+    }
+    .infoBar-img {
+      margin-right: 50px;
+    }
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .infoBar {
+    height: 220px;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    .infoBar-content {
+      text-align: center;
+      padding: 0 50px;
+      .infoBar-name {
+        font-size: 16px;
+      }
+    }
+    .infoBar-img {
+      margin: 0px;
+      margin-bottom: 30px;
+    }
   }
 }

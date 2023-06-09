@@ -55,3 +55,28 @@
     }
   }
 }
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .signup-form {
+    margin: 100px 50px 150px 50px;
+    height: 425px;
+    h2 {
+      font-size: 20px;
+    }
+    label {
+      font-size: 14px;
+    }
+    input {
+      font-size: 14px;
+    }
+    .error-container {
+      height: 15px;
+      .errorText {
+        font-size: 10px;
+      }
+    }
+    .signup-btn {
+      font-size: 14px;
+    }
+  }
+}

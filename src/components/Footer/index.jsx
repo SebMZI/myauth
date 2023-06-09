@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <p className="footer-txt">
-        &Copyright; Copyright 2023 - Sébastien MORAZZANI-MARIGNY
+        © Copyright 2023 - Sébastien MORAZZANI-MARIGNY
       </p>
     </footer>
   );

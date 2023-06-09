@@ -12,10 +12,10 @@ const Welcome = () => {
             Bienvenue sur <span>MyAuth</span>
           </h2>
           <div>
-            <Link to={"signup"} className="welcome-cta">
+            <Link to={"/signup"} className="welcome-cta">
               S'Inscrire
             </Link>
-            <Link to={"login"} className="welcome-cta-log">
+            <Link to={"/login"} className="welcome-cta-log">
               Se Connecter
             </Link>
           </div>

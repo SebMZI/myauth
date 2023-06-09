@@ -11,3 +11,11 @@
     font-size: 14px;
   }
 }
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .footer {
+    .footer-txt {
+      font-size: 10px;
+    }
+  }
+}

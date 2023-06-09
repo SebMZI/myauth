@@ -88,6 +88,7 @@
       flex-direction: column;
       padding-top: 50px;
       label {
+        font-size: 18px;
         margin: 0px 150px 20px 150px;
       }
       input {
@@ -101,11 +102,12 @@
         max-width: 1240px;
         min-height: 150px;
         max-height: 150px;
-        overflow-y: scroll;
         &:focus {
           outline: none;
+          overflow-y: scroll;
         }
       }
+
       .contact-btn {
         margin: 70px auto 70px auto;
         width: 50%;
@@ -117,6 +119,114 @@
         font-size: 16px;
         border-radius: 25px;
         cursor: pointer;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .welcome {
+    padding: 0 50px;
+    max-width: 1024px;
+    .welcome-main {
+      justify-content: space-around;
+      .welcome-content {
+        .welcome-title {
+          font-size: 40px;
+          margin-bottom: 20px;
+        }
+        .welcome-cta,
+        .welcome-cta-log {
+          font-size: 14px;
+          padding: 10px 20px;
+        }
+      }
+      .welcome-lock {
+        width: 225px;
+        margin-right: 0;
+      }
+    }
+    .contact-container {
+      .contact-title {
+        font-size: 30px;
+      }
+      .welcome-contact-form {
+        label {
+          font-size: 16px;
+          margin: 0px 50px 20px 50px;
+        }
+        input {
+          margin: 0 50px 35px 50px;
+        }
+        textarea {
+          margin: 0 50px 0 50px;
+          border: none;
+          border-bottom: 1px solid black;
+          font-size: 16px;
+          max-width: 1240px;
+          min-height: 150px;
+          max-height: 150px;
+          overflow-y: scroll;
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .welcome {
+    .welcome-main {
+      flex-direction: column-reverse;
+      justify-content: flex-end;
+      height: 350px;
+      .welcome-lock {
+        width: 200px;
+        margin-right: 0;
+      }
+      .welcome-content {
+        .welcome-title {
+          font-size: 24px;
+          margin-bottom: 30px;
+          padding-top: 30px;
+        }
+        .welcome-cta,
+        .welcome-cta-log {
+          font-size: 14px;
+          padding: 10px 15px;
+        }
+      }
+    }
+    .contact-container {
+      height: 700px;
+      margin-top: 80px;
+      margin-bottom: 100px;
+      .contact-title {
+        font-size: 24px;
+      }
+      .welcome-contact-form {
+        label {
+          font-size: 16px;
+          margin: 0px 50px 20px 50px;
+        }
+        input {
+          margin: 0 50px 35px 50px;
+        }
+        textarea {
+          margin: 0 50px 0 50px;
+          border: none;
+          border-bottom: 1px solid black;
+          font-size: 16px;
+          max-width: 1240px;
+          min-height: 150px;
+          max-height: 150px;
+          overflow-y: scroll;
+          &:focus {
+            outline: none;
+          }
+        }
       }
     }
   }

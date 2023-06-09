@@ -23,7 +23,7 @@ function App() {
       <div>
         <div className="home-main">
           <h2 className="home-title">
-            Bonjour
+            Bonjour{" "}
             {user.displayName ? user.displayName : " nouvel Utilisateur !"}
           </h2>
           <p className="home-subtitle">Comment allez-vous ? </p>

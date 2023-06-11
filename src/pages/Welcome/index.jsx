@@ -13,7 +13,7 @@ const Welcome = () => {
           </h2>
           <div>
             <Link to={"/signup"} className="welcome-cta">
-              S'Inscrire
+              S'inscrire
             </Link>
             <Link to={"/login"} className="welcome-cta-log">
               Se Connecter

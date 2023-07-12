@@ -1,4 +1,4 @@
-#MYAUTH
+# MYAUTH
 
 Ce projet est un projet designé et codé par moi-même.
 Il a pour but de montrer mes compétences en développement web, et que je suis aussi capable de m'adapter à de nouvelles choses comme l'authentification FireBase.

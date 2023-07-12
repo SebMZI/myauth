@@ -1,5 +1,5 @@
 import React from "react";
-import cardImg from "../../assets/card-img.svg";
+import cardImg from "../../assets/card-img.webp";
 
 const Card = () => {
   return (

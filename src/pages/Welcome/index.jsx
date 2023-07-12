@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import heroImg from "../../assets/hero-img.svg";
+import heroImg from "../../assets/hero-img.webp";
 import HomeAbout from "../../components/about";
 import Contact from "../../components/contact";
 import Advise from "../../components/Advises";

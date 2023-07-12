@@ -1,5 +1,5 @@
 import React from "react";
-import contactImg from "../../assets/contact-img.svg";
+import contactImg from "../../assets/contact-img.webp";
 
 const Contact = () => {
   return (

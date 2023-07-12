@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import { getAuth, signOut } from "firebase/auth";
-import burger from "../../assets/burger.svg";
+import burger from "../../assets/burger.webp";
 
 const Header = () => {
   const [cookies, setCookie, removeCookie] = useCookies([]);

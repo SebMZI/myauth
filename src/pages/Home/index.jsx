@@ -1,7 +1,7 @@
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import homeImg from "../../assets/home-img.svg";
+import homeImg from "../../assets/home-img.webp";
 
 function App() {
   const auth = getAuth();

@@ -7,7 +7,7 @@ import {
   updateEmail,
 } from "firebase/auth";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import addImg from "../../assets/add-img.svg";
+import addImg from "../../assets/add-img.webp";
 
 const ModifDashboard = ({ user, name }) => {
   const [pwd, setPwd] = useState("");

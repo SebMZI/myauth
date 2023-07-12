@@ -51,21 +51,24 @@
       width: 3px;
       background: $secondary;
     }
-    &-title {
-      margin-bottom: 40px;
-      font-size: 60px;
-      font-weight: 600;
-      line-height: 70px;
-
-      span {
-        background: -webkit-linear-gradient(left, #3338df, #484ddb, #ffffff);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-size: 90px;
-        font-weight: 700;
-      }
+  }
+  .home-title {
+    margin-bottom: 40px;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 70px;
+    span {
+      background: -webkit-linear-gradient(left, #3338df, #484ddb, #ffffff);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 90px;
+      font-weight: 700;
     }
+  }
+  img {
+    width: 507px;
+    height: 507px;
   }
 
   .btn-acc {

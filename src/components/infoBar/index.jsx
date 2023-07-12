@@ -12,14 +12,14 @@ const InfoBar = ({ user, name, email, id, emailVerified }) => {
   return (
     <div className="infoBar">
       <div className="infoBar-content">
-        <h3 className="infoBar-name">{name}</h3>
-        <span className="infoBar-uid">ID : {id}</span>
+        <h2 className="infoBar-name">{name}</h2>
+        <p className="infoBar-uid">ID : {id}</p>
         <div className="email-content">
           <p className="infoBar-email">{email}</p>
           {emailVerified === false ? (
             <div className="verif-email">
               <p className="emailVerif-txt">Email non vérifié !</p>
-              <button onClick={handleVerify} className="verify-btn">
+              <button onClick={handleVerify} className="btn btn-solid">
                 {msgSend}
               </button>
             </div>

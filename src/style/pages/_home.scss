@@ -1,0 +1,105 @@
+.home {
+  max-width: $max-width;
+  width: 100%;
+  margin: 80px auto 140px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 100px;
+    right: -50px;
+    width: 250px;
+    height: 250px;
+    background: $secondary;
+    filter: blur(200px);
+    z-index: -1000;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -250px;
+    left: -300px;
+    width: 250px;
+    height: 250px;
+    background: $primary;
+    filter: blur(250px);
+    z-index: -1000;
+  }
+  .home-main {
+    padding-left: 50px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: -23px;
+      left: -12px;
+      height: 25px;
+      width: 25px;
+      border-radius: 50px;
+      background: $secondary;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 250px;
+      width: 3px;
+      background: $secondary;
+    }
+    &-title {
+      margin-bottom: 40px;
+      font-size: 60px;
+      font-weight: 600;
+      line-height: 70px;
+
+      span {
+        background: -webkit-linear-gradient(left, #3338df, #484ddb, #ffffff);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 90px;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .btn-acc {
+    height: 43px;
+  }
+}
+
+@media screen and (min-width: $min-phone) and (max-width: $max-phone) {
+  .home {
+    padding: 0 20px;
+    flex-direction: column;
+    .home-main {
+      padding-left: 40px;
+      margin-bottom: 70px;
+      &::after {
+        height: 200px;
+      }
+    }
+    .home-title {
+      font-size: 40px;
+      line-height: 50px;
+      margin-bottom: 30px;
+      span {
+        background: -webkit-linear-gradient(left, #3338df, #484ddb, #ffffff);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 50px;
+        font-weight: 700;
+      }
+    }
+    img {
+      width: 331px;
+      height: 331px;
+    }
+  }
+}

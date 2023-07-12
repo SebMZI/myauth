@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import { getAuth, signOut } from "firebase/auth";
+import burger from "../../assets/burger.svg";
 
 const Header = () => {
   const [cookies, setCookie, removeCookie] = useCookies([]);
   const auth = getAuth();
+  const [toggle, setToggle] = useState(false);
 
   const handleLogout = () => {
     signOut(auth)
@@ -19,33 +21,57 @@ const Header = () => {
       });
   };
 
+  const handleMenu = () => {
+    setToggle(!toggle);
+    console.log(toggle);
+  };
+
   return (
-    <header>
-      <h1>MyAuth</h1>
-      <nav>
+    <header className="header">
+      <h1 className="header-logo">MYAUTH</h1>
+      <img
+        className="menu-burger"
+        src={burger}
+        alt="menu-burger"
+        onClick={handleMenu}
+      />
+      <nav
+        className={
+          toggle === false ? "header--nav " : "header--nav menu-active "
+        }
+      >
         {cookies.userToken ? (
-          <ul>
+          <ul onClick={handleMenu}>
             <li>
               <Link to={"/home"}>Accueil</Link>
             </li>
             <li>
               <Link to={"/dashboard"}>Mon Compte</Link>
             </li>
-            <button className="cta-btn" onClick={handleLogout}>
+            <button className="btn btn-light" onClick={handleLogout}>
               Se déconnecter
             </button>
           </ul>
         ) : (
-          <ul>
+          <ul onClick={handleMenu}>
             <li>
               <Link to={"/"}>Accueil</Link>
             </li>
             <li>
+              <a href="#about">A Propos</a>
+            </li>
+            <li>
+              <a href="#services">Services</a>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
+            <li>
               <Link to={"/login"}>Se connecter</Link>
             </li>
-            <li className="cta-btn">
-              <Link to={"/signup"}>Créer un compte</Link>
-            </li>
+            <button className="btn btn-light">
+              <Link to={"/signup"}>S'inscrire</Link>
+            </button>
           </ul>
         )}
       </nav>

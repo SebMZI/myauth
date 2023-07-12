@@ -1,29 +1,41 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import lock from "../../assets/lock.png";
+import heroImg from "../../assets/hero-img.svg";
+import HomeAbout from "../../components/about";
 import Contact from "../../components/contact";
+import Advise from "../../components/Advises";
+import Services from "../../components/Services";
 
 const Welcome = () => {
   return (
-    <div className="welcome">
-      <div className="welcome-main">
+    <main className="welcome">
+      <div className="welcome-hero">
         <div className="welcome-content">
           <h2 className="welcome-title">
-            Bienvenue sur <span>MyAuth</span>
+            Bienvenue chez <span>MyAuth</span>
           </h2>
-          <div>
-            <Link to={"/signup"} className="welcome-cta">
+          <h3 className="welcome-subtitle">
+            Votre partenaire de confiance en matière de sécurité numérique !
+          </h3>
+          <p className="welcome-text">
+            + de 5000 entreprises nous font confiance !
+          </p>
+          <div className="welcome-btns">
+            <Link to={"/signup"} className="btn btn-solid ">
               S'inscrire
             </Link>
-            <Link to={"/login"} className="welcome-cta-log">
-              Se Connecter
+            <Link to={"/login"} className="btn btn-light">
+              Se connecter
             </Link>
           </div>
         </div>
-        <img className="welcome-lock" src={lock} alt="lock" />
+        <img className="welcome-img" src={heroImg} alt="laptop" />
       </div>
+      <HomeAbout />
+      <Advise />
+      <Services />
       <Contact />
-    </div>
+    </main>
   );
 };
 

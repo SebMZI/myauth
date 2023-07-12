@@ -3,9 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <footer className="footer">
-      <p className="footer-txt">
-        © Copyright 2023 - Sébastien MORAZZANI-MARIGNY
-      </p>
+      <p className="footer-txt">© 2023 - MyAuth</p>
     </footer>
   );
 };

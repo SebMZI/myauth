@@ -1,37 +1,28 @@
 import React from "react";
+import aboutImg from "../../assets/about-img.svg";
 
 const HomeAbout = () => {
   return (
-    <div className="home-abt">
-      <div className="home-abt-container">
-        <h2 className="home-abt-title">My Auth</h2>
-        <p className="home-abt-content">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Non iste
-          ratione aliquid ipsam earum veniam ipsum minus sequi repellat hic,
-          autem quidem molestiae, nobis ipsa, vero sunt officiis temporibus
-          similique eligendi quae voluptatum odio quaerat sit quam. Nihil
-          voluptates rem quasi consectetur numquam nesciunt exercitationem,
-          dicta iste laboriosam! Porro asperiores voluptatibus sed voluptatum
-          omnis beatae consequuntur rerum obcaecati ducimus natus nihil, tempora
-          blanditiis iure a dolore aliquam est perferendis excepturi doloribus
-          quas! Necessitatibus perspiciatis amet esse consequatur ea qui vero
-          tempore sint repellendus eius, at perferendis, error laborum neque.
-          Vitae amet repellat earum magnam veniam officiis exercitationem nemo,
-          aliquid, nobis beatae odio fuga quibusdam assumenda ratione sunt.
-          Distinctio voluptatem, maxime assumenda ullam perspiciatis repellat
-          aliquid itaque placeat quidem, hic molestias incidunt? Cupiditate
-          autem minima placeat, facere velit commodi exercitationem cumque
-          maiores tempore, voluptas recusandae assumenda! Numquam placeat
-          asperiores nisi soluta totam animi fugiat consectetur dolore laborum
-          ducimus! Ea ut obcaecati fugit pariatur molestiae. Nostrum placeat
-          natus fuga iste temporibus laboriosam consequuntur, maiores culpa ad
-          aperiam suscipit. Omnis nulla est perspiciatis aliquid! Esse, earum,
-          tempore asperiores aut illum ex veniam sequi odit eligendi officiis
-          facilis expedita provident itaque unde illo modi enim vel. Tempore
-          iste soluta veniam libero laborum in natus?
+    <section id="about" className="welcome-about">
+      <img src={aboutImg} alt="infos about" />
+      <div className="about-content">
+        <h2>A propos de MyAuth</h2>
+        <p className="about-text para1">
+          Chez MyAuth, nous sommes passionnés par la sécurité numérique et nous
+          nous engageons à fournir les meilleures solutions pour protéger votre
+          entreprise. Notre équipe d'experts hautement qualifiés est spécialisée
+          dans le domaine de l'authentification et de la sécurité informatique,
+          et nous mettons cette expertise au service de nos clients.
+        </p>
+        <p className="about-text para2">
+          Notre approche est axée sur la personnalisation. Nous comprenons que
+          chaque entreprise a des besoins et des défis uniques en matière de
+          sécurité. C'est pourquoi nous travaillons en étroite collaboration
+          avec nos clients pour comprendre leurs exigences spécifiques et
+          proposer des solutions sur mesure adaptées à leurs besoins.
         </p>
       </div>
-    </div>
+    </section>
   );
 };
 

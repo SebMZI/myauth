@@ -1,0 +1,53 @@
+.btn {
+  padding: 6px 25px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all ease-out 0.4s;
+  border-radius: 15px;
+  color: $primary;
+  &-solid {
+    background: $secondary;
+    border: 1px solid $secondary;
+    margin-right: 20px;
+    color: $primary;
+    &:hover {
+      background: none;
+      border: 1px solid $primary;
+    }
+    a {
+      color: $primary;
+    }
+  }
+  &-light {
+    background: none;
+    border: 1px solid #e6e7e9;
+    a {
+      font-family: "Open Sans", sans-serif;
+      font-size: 16px;
+      color: $primary;
+    }
+    &:hover {
+      background: $secondary;
+      border: 1px solid $secondary;
+    }
+  }
+  &-dark {
+    background: $background;
+    border: 1px solid $background;
+    a {
+      font-family: "Open Sans", sans-serif;
+      font-size: 16px;
+      color: $primary;
+    }
+    &:hover {
+      background: none;
+      border: 1px solid $background;
+      color: $background;
+    }
+  }
+  &-delete {
+    background: red;
+    border: 1px solid red;
+  }
+}

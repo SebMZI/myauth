@@ -30,8 +30,7 @@ const Dashboard = () => {
     console.log(email, photoURL, emailVerified, displayName, uid);
 
     return (
-      <div className="dashboard">
-        <h2 className="dashboard-title">Mon Compte </h2>
+      <section className="dashboard">
         <InfoBar
           user={user}
           name={displayName}
@@ -44,7 +43,7 @@ const Dashboard = () => {
           <ModifDashboard user={user} name={displayName} photo={photoURL} />
           <DeleteDashboard user={user} />
         </div>
-      </div>
+      </section>
     );
   }
 };

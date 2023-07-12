@@ -7,6 +7,7 @@ import {
   updateEmail,
 } from "firebase/auth";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import addImg from "../../assets/add-img.svg";
 
 const ModifDashboard = ({ user, name }) => {
   const [pwd, setPwd] = useState("");
@@ -17,6 +18,7 @@ const ModifDashboard = ({ user, name }) => {
   const [email, setEmail] = useState("");
   const [emailMsg, setEmailMsg] = useState("");
   const [img, setImg] = useState(null);
+  //const [urlImg, setUrlImg] = useState(null);
   const auth = getAuth();
 
   const handleChangeName = () => {
@@ -75,9 +77,9 @@ const ModifDashboard = ({ user, name }) => {
 
   const handleImg = async (event) => {
     event.preventDefault();
-    console.log(img);
-    const file = URL.createObjectURL(img);
-    console.log(file);
+    //console.log(img);
+    //const fileUrl = window.webkitURL.createObjectURL(img);
+    //console.log(fileUrl);
     if (!img) {
       console.log("Veuillez ajouter une image !");
       return;
@@ -91,14 +93,14 @@ const ModifDashboard = ({ user, name }) => {
       const storageRef = ref(storage, `${user.uid}/images/${img.name}`);
       const snapshot = await uploadBytes(storageRef, img);
       const downloadURL = await getDownloadURL(snapshot.ref);
-      console.log(downloadURL);
-
+      //console.log(downloadURL);
+      //setUrlImg(downloadURL);
       await updateProfile(auth.currentUser, {
         photoURL: downloadURL,
       })
         .then(() => {
           console.log("Photo ajoutée ou modifiée");
-          window.location.reload(false);
+          //window.location.reload(false);
         })
         .catch((err) => console.log(err));
     } catch (error) {
@@ -123,81 +125,90 @@ const ModifDashboard = ({ user, name }) => {
 
   return (
     <div className="dashboard-modif">
-      <form onSubmit={handleChangeName} className="changeName">
-        <label htmlFor="name" className="dash-label">
-          {!name ? "Ajouter un Nom et un Prénom" : "Modifier Nom et Prénom"}
-        </label>
-        <input
-          id="name"
-          type="text"
-          onChange={(event) => setName(event.target.value)}
-          className="dash-input"
-        />
-        <div className="dash-NameMsg">{nameMsg && <p>{nameMsg}</p>}</div>
+      <div>
+        <form onSubmit={handleChangeName} className="changeName">
+          <label htmlFor="name" className="dash-label">
+            {!name ? "Ajouter un Nom et un Prénom" : "Modifier Nom et Prénom"}
+          </label>
+          <input
+            id="name"
+            type="text"
+            onChange={(event) => setName(event.target.value)}
+            className="dash-input"
+          />
+          <div className="dash-NameMsg">{nameMsg && <p>{nameMsg}</p>}</div>
 
-        <button className="dash-btn" type="submit">
-          {!name ? "Ajouter" : "Modifier"}
-        </button>
-      </form>
-      <form onSubmit={handleChangeEmail} className="changeEmail">
-        <label htmlFor="email" className="dash-label">
-          Modifier Email
-        </label>
-        <input
-          type="email"
-          className="dash-input"
-          onChange={(event) => setEmail(event.target.value)}
-        />
-        <div className="dash-msg">
-          <p>{emailMsg}</p>
-        </div>
-        <button type="submit" className="dash-btn">
-          Modifier Email
-        </button>
-      </form>
-      <form onSubmit={handleChangePwd} className="changePwd">
-        <label htmlFor="pwd" className="dash-label">
-          Modifier Mot de passe
-        </label>
-        <input
-          type="password"
-          id="pwd"
-          onChange={(event) => setPwd(event.target.value)}
-          className="dash-input"
-          value={pwd}
-        />
-        <br />
-        <label htmlFor="pwd2" className="dash-label">
-          Confirmez Mot de passe
-        </label>
-        <input
-          type="password"
-          id="pwd2"
-          onChange={(event) => setPwd2(event.target.value)}
-          className="dash-input"
-          value={pwd2}
-        />
-        <div className="dash-msg">{pwdMsg && <p>{pwdMsg}</p>}</div>
-        <button type="submit" className="dash-btn">
-          Modifier
-        </button>
-      </form>
-      <form className="changeImg" onSubmit={handleImg}>
-        <label htmlFor="img" className="dash-label">
-          Ajouter une Image
-        </label>
-        <input
-          className="dash-input"
-          type="file"
-          accept=".png,.jpg,.jpeg,.gif"
-          id="img"
-          placeholder="https://www.grgergerg.com/fezfzefzefe"
-          onChange={(event) => setImg(event.target.files[0])}
-        />
-        <button type="submit" className="dash-btn">
-          Modifier
-        </button>
-      </form>
+          <button className="btn btn-solid" type="submit">
+            {!name ? "Ajouter" : "Modifier"}
+          </button>
+        </form>
+
+        <form onSubmit={handleChangePwd} className="changePwd">
+          <label htmlFor="pwd" className="dash-label">
+            Modifier Mot de passe
+          </label>
+          <input
+            type="password"
+            id="pwd"
+            onChange={(event) => setPwd(event.target.value)}
+            className="dash-input"
+            value={pwd}
+          />
+          <br />
+          <label htmlFor="pwd2" className="dash-label">
+            Confirmer Mot de passe
+          </label>
+          <input
+            type="password"
+            id="pwd2"
+            onChange={(event) => setPwd2(event.target.value)}
+            className="dash-input"
+            value={pwd2}
+          />
+          <div className="dash-msg">{pwdMsg && <p>{pwdMsg}</p>}</div>
+          <button type="submit" className="btn btn-solid">
+            Modifier
+          </button>
+        </form>
+      </div>
+      <dir>
+        <form onSubmit={handleChangeEmail} className="changeEmail">
+          <label htmlFor="email" className="dash-label">
+            Modifier Email
+          </label>
+          <input
+            type="email"
+            className="dash-input"
+            onChange={(event) => setEmail(event.target.value)}
+          />
+          <div className="dash-msg">
+            <p>{emailMsg}</p>
+          </div>
+          <button type="submit" className="btn btn-solid">
+            Modifier
+          </button>
+        </form>
+        <form className="changeImg" onSubmit={handleImg}>
+          <label htmlFor="img" className="dash-label fileImg">
+            <img src={addImg} alt="Ajouter" className="addImg" />
+            <p>4mo max : PNG/JPG/JPEG/GIF</p>
+            <div className="btn btn-dark">Ajouter Une Image</div>
+            {/* <img src={"de"} alt="preview" className="img-preview" /> */}
+          </label>
+          <input
+            className="dash-input"
+            type="file"
+            accept=".png,.jpg,.jpeg,.gif"
+            id="img"
+            placeholder="https://www.grgergerg.com/fezfzefzefe"
+            onChange={(event) => setImg(event.target.files[0])}
+            size={4194304}
+          />
+          <button type="submit" className="btn btn-solid">
+            Modifier
+          </button>
+        </form>
+      </dir>
     </div>
   );
 };

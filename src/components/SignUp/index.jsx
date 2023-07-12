@@ -32,34 +32,35 @@ const SignUpForm = () => {
   );
 
   return (
-    <form onSubmit={handleSubmit} className="signup-form">
-      <h2>Créer Un Compte</h2>
-      <label htmlFor="email">Email</label>
-      <input
-        id="email"
-        type="email"
-        onChange={(event) => {
-          setEmail(event.target.value);
-        }}
-      />
-      <label htmlFor="password">Mot de passe</label>
-      <input
-        id="password"
-        type="password"
-        onChange={(event) => {
-          setPassword(event.target.value);
-        }}
-      />
-      <div className="error-container">
-        {isError ? <p className="errorText">Email invalide.</p> : null}
-      </div>
-      <button className="signup-btn" type="submit">
-        Créer un compte
-      </button>
-      <p className="no-acc">
-        Déjà un compte ? <Link to={"/login"}>Connectez-vous !</Link>
-      </p>
-    </form>
+    <section className="signUp">
+      <form onSubmit={handleSubmit} className="signup-form">
+        <label htmlFor="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          onChange={(event) => {
+            setEmail(event.target.value);
+          }}
+        />
+        <label htmlFor="password">Mot de passe</label>
+        <input
+          id="password"
+          type="password"
+          onChange={(event) => {
+            setPassword(event.target.value);
+          }}
+        />
+        <div className="error-container">
+          {isError ? <p className="errorText">Email invalide.</p> : null}
+        </div>
+        <button type="submit" className="btn btn-dark">
+          Créer un compte
+        </button>
+        <p className="already-acc">
+          Déjà un compte ? <Link to={"/login"}>Connectez-vous !</Link>
+        </p>
+      </form>
+    </section>
   );
 };
 

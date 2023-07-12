@@ -32,9 +32,9 @@ const DeleteDashboard = () => {
 
   return (
     <div className="delete-content">
-      <p>Supprimer mon compte et toutes ses données !</p>
-      <button onClick={handleDelete} className="delete-btn">
-        Supprimer
+      <p>Votre compte et toutes ses données seront supprimés intégralement </p>
+      <button disabled onClick={handleDelete} className="btn btn-delete">
+        Supprimer les données
       </button>
     </div>
   );

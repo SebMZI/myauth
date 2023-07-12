@@ -1,6 +1,7 @@
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import React, { useState, useEffect } from "react";
-import HomeAbout from "../../components/about";
+import { Link } from "react-router-dom";
+import homeImg from "../../assets/home-img.svg";
 
 function App() {
   const auth = getAuth();
@@ -20,16 +21,17 @@ function App() {
 
   if (user) {
     return (
-      <div>
+      <section className="home">
         <div className="home-main">
           <h2 className="home-title">
-            Bonjour{" "}
-            {user.displayName ? user.displayName : " nouvel Utilisateur !"}
+            Bienvenue chez <span>MyAuth</span>
           </h2>
-          <p className="home-subtitle">Comment allez-vous ? </p>
+          <button className="btn btn-acc btn-solid">
+            <Link to={"/dashboard"}>Accéder à mon compte</Link>
+          </button>
         </div>
-        <HomeAbout />
-      </div>
+        <img src={homeImg} alt="hello" />
+      </section>
     );
   }
 }

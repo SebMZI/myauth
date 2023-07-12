@@ -1,0 +1,25 @@
+@keyframes menuIn {
+  from {
+    display: none;
+    height: 0px;
+    transform: translateX(800px);
+  }
+  to {
+    display: block;
+    height: auto;
+    transform: translateX(0);
+  }
+}
+
+@keyframes menuOut {
+  from {
+    display: block;
+    height: auto;
+    transform: translateX(0);
+  }
+  to {
+    display: none;
+    height: 0px;
+    transform: translateX(800px);
+  }
+}

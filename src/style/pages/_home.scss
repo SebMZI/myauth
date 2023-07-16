@@ -80,9 +80,13 @@
   .home {
     padding: 0 20px;
     flex-direction: column;
+    &::before {
+      right: 0;
+    }
     .home-main {
       padding-left: 40px;
       margin-bottom: 70px;
+
       &::after {
         height: 200px;
       }

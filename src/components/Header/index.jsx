@@ -30,7 +30,7 @@ const Header = () => {
     <header className="header">
       <h1 className="header-logo">MYAUTH</h1>
       <img
-        className="menu-burger"
+        className={toggle === false ? "menu-burger" : "menu-burger active"}
         src={burger}
         alt="menu-burger"
         onClick={handleMenu}

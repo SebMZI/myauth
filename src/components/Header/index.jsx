@@ -3,6 +3,7 @@ import { Link, Navigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import { getAuth, signOut } from "firebase/auth";
 import burger from "../../assets/burger.webp";
+import { HashLink } from "react-router-hash-link";
 
 const Header = () => {
   const [cookies, setCookie, removeCookie] = useCookies([]);
@@ -40,37 +41,37 @@ const Header = () => {
           toggle === false ? "header--nav " : "header--nav menu-active "
         }
       >
-        {cookies.userToken ? (
+        {!cookies.userToken ? (
           <ul onClick={handleMenu}>
             <li>
-              <Link to={"/home"}>Accueil</Link>
+              <Link to="/">Accueil</Link>
             </li>
             <li>
-              <Link to={"/dashboard"}>Mon Compte</Link>
-            </li>
-            <button className="btn btn-light" onClick={handleLogout}>
-              Se déconnecter
-            </button>
-          </ul>
-        ) : (
-          <ul onClick={handleMenu}>
-            <li>
-              <Link to={"/"}>Accueil</Link>
+              <HashLink to="/#about">A Propos</HashLink>
             </li>
             <li>
-              <a href="#about">A Propos</a>
+              <HashLink to="/#services">Services</HashLink>
             </li>
             <li>
-              <a href="#services">Services</a>
-            </li>
-            <li>
-              <a href="#contact">Contact</a>
+              <HashLink to="/#contact">Contact</HashLink>
             </li>
             <li>
               <Link to={"/login"}>Se connecter</Link>
             </li>
             <button className="btn btn-light">
               <Link to={"/signup"}>S'inscrire</Link>
+            </button>
+          </ul>
+        ) : (
+          <ul onClick={handleMenu}>
+            <li>
+              <Link to="/home">Accueil</Link>
+            </li>
+            <li>
+              <Link to="/dashboard">Mon Compte</Link>
+            </li>
+            <button className="btn btn-light" onClick={handleLogout}>
+              Se déconnecter
             </button>
           </ul>
         )}
